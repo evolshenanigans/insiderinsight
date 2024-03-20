@@ -18,6 +18,8 @@
         <!-- Page content here -->
         <div class="grid grid-cols-1 gap-6 lg:p-10 xl:grid-cols-3 bg-base-200 text-base-content p-3">
           <%= render "layouts/header" %>
+           <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
           <%= yield %>
         </div>
       </div>
@@ -27,6 +29,13 @@
           <!-- Sidebar content here -->
           <li><a href="https://daisyui.com/" target="_blank" class=""> About </a> </li>
           <li><a href="https://github.com/mkhairi/rails-daisyui-starter" target="_blank" class=""> Source </a></li>
+          <% if user_signed_in? %>
+            <li>
+              <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn", data: { turbo_confirm: 'Are you sure?' } %>
+            </li>
+          <% else %>
+            <li><a href="<%= new_user_session_path %>" class="btn">Login</a></li>
+          <% end %>
         </ul>
       </div>
     </div>
