@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_22_194215) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_25_183402) do
   create_table "officials", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_22_194215) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "official_id"
   end
 
   create_table "trades", force: :cascade do |t|

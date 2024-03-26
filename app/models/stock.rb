@@ -1,6 +1,7 @@
 class Stock < ApplicationRecord
   has_many :trades
-  belongs_to :official
+  has_many :officials, through: :trades
+
 
   validates :name, presence: true
 end

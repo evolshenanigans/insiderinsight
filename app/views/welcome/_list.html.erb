@@ -1,0 +1,16 @@
+<div>
+  <div>
+    <h2 class="card-title">Stocks</h2>
+    <% if @stocks.present? %>
+      <ul>
+        <% @stocks.each do |stock| %>
+          <li>
+            <p><%= stock.name %></p>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No stocks found.</p>
+    <% end %>
+  </div>
+</div>

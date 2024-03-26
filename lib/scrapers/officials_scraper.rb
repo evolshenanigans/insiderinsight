@@ -17,18 +17,35 @@ class OfficialsScraper
         state = row.at_css('.us-state-compact').text.strip rescue nil
         stock_name = row.at_css('.issuer-name a').text.strip rescue nil
 
+        transaction_type = row.at_css('.tx-type').text.strip rescue nil
+        transaction_count = row.at_css('.transaction-count').text.strip rescue nil # Adjust selector
+        security_type = row.at_css('.security-type').text.strip rescue nil # Adjust selector
+
         next unless politician_name && party && state && stock_name
 
-        # Find or create the official by name
         official = Official.find_or_create_by(name: politician_name) do |o|
           o.party_affiliation = party
           o.state = state
         end
 
-        # Associate stock with the official
-        official.stocks.find_or_create_by(name: stock_name)
+        stock = Stock.find_or_create_by(name: stock_name)
+        if stock.persisted?
+          puts "stock persisted with ID: #{stock.id}"
+        else
+          puts "stock not saved: #{stock.errors.full_messages.join(', ')}"
+        end
 
-        puts "Processed: #{politician_name}, Party: #{party}, State: #{state}, Stock: #{stock_name}"
+
+
+        Trade.create!(
+          official: official,
+          stock: stock,
+          transaction_type: transaction_type,
+          transaction_count: transaction_count.to_i,
+          security_type: security_type
+        )
+
+        puts "Processed: #{politician_name}, Party: #{party}, State: #{state}, Stock: #{stock_name}, Transaction Type: #{transaction_type}, Transaction Count: #{transaction_count}, Security Type: #{security_type}"
       end
     end
   end

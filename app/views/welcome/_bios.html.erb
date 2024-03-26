@@ -1,0 +1,19 @@
+
+<div>
+  <div>
+    <div>
+      <h2 class="card-title">Officials</h2>
+      <% if @officials.present? %>
+        <ul>
+          <% @officials.each do |official| %>
+            <li>
+              <p><%= official.name %> - <%= official.party_affiliation %> - <%= official.state %></p>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No officials found.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

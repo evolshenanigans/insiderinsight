@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
+  # Existing routes
   root "welcome#index"
+
+  # Add resourceful routes for officials
+  resources :officials, only: [:show, :index] #
 end
