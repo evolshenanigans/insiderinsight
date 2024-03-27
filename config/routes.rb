@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Existing routes
-  root "welcome#index"
+
+  root to: "welcome#landing"
 
   # Add resourceful routes for officials
-  resources :officials, only: [:show, :index] #
+  get 'welcome/index' => 'welcome#index'
+  
+  resources :officials, only: [:index, :show]
 end
