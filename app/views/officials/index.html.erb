@@ -1,0 +1,8 @@
+<section class="w-5/6 m-auto mt-10 grid grid-cols-1 gap-x-3 gap-y-10 md:grid-cols-3 max-w-6xl items-center mb-20">
+  <% @officials.each do |official| %>
+    <div class="py-3 px-2">
+      <%= link_to official.name, official_path(official), class: "text-xl mb-8" %>
+      <p><%= official.party_affiliation %> - <%= official.state %></p>
+    </div>
+  <% end %>
+</section>

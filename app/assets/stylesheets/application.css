@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* * {
+border: 2px;
+border-color: red;
+border-style: dotted;
+} */
+
+.bg-car{
+    background-image:url('https://cdna.artstation.com/p/assets/images/images/027/420/102/large/juan-pablo-fuentes-ruiz-highresscreenshot00014.jpg?1591484528')
+ }
+ .bg-lights{
+   background-image: url('https://storage.googleapis.com/pai-images/e96dee29bfda424787d93a83ebc9586f.jpeg')
+ }
+ dialog{
+   animation: show 0.3s linear
+ }
+ dialog::backdrop {
+   background: black;
+  
+   opacity:80%;
+ }
+ @keyframes show{
+   from{
+     opacity:0;
+   }
+   to{
+     opacity:100%
+   }
+ }
+ 
+ 
