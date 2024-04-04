@@ -87,6 +87,7 @@ gem "sqlite3", "~> 1.4"
 gem "table_print"
 gem "nokogiri"
 gem 'puppeteer-ruby'
+gem 'simple_form'
 
 group :development do
   gem "annotate"
