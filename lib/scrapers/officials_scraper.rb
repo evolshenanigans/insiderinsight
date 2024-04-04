@@ -15,10 +15,12 @@ class OfficialsScraper
         politician_name = row.at_css('.politician-name a').text.strip rescue nil
         party = row.at_css('.party').text.strip rescue nil
         state = row.at_css('.us-state-compact').text.strip rescue nil
+        # image_url = article.at_css('.cell--avatar img')['src'] rescue nil
+        volume = row.at_css('.cell--volume .q-value').text.strip.gsub(/[^\d]/, '') rescue nil
         stock_name = row.at_css('.issuer-name a').text.strip rescue nil
 
         transaction_type = row.at_css('.tx-type').text.strip rescue nil
-        transaction_count = row.at_css('.transaction-count').text.strip rescue nil # Adjust selector
+
         security_type = row.at_css('.security-type').text.strip rescue nil # Adjust selector
 
         next unless politician_name && party && state && stock_name
@@ -26,6 +28,7 @@ class OfficialsScraper
         official = Official.find_or_create_by(name: politician_name) do |o|
           o.party_affiliation = party
           o.state = state
+          # o.image_url = image_url
         end
 
         stock = Stock.find_or_create_by(name: stock_name)
@@ -41,11 +44,11 @@ class OfficialsScraper
           official: official,
           stock: stock,
           transaction_type: transaction_type,
-          transaction_count: transaction_count.to_i,
-          security_type: security_type
+          transaction_count: volume,
+          security_type: security_type,
         )
 
-        puts "Processed: #{politician_name}, Party: #{party}, State: #{state}, Stock: #{stock_name}, Transaction Type: #{transaction_type}, Transaction Count: #{transaction_count}, Security Type: #{security_type}"
+        puts "Processed: #{politician_name}, Party: #{party}, State: #{state}, Stock: #{stock_name}, Transaction Type: #{transaction_type}, Volume: #{volume}, Security Type: #{security_type}"
       end
     end
   end

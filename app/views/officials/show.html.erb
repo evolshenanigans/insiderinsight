@@ -1,0 +1,20 @@
+<div class="w-4/5 m-auto mt-10">
+  <div class="flex items-center">
+    <% if @official.image_url.present? %>
+      <%= image_tag(@official.image_url, alt: @official.name, class: "w-24 h-24 mr-4 rounded-full") %>
+    <% end %>
+    <h1 class="text-5xl mb-8"><%= @official.name %></h1>
+  </div>
+  <p class="text-lg">Party: <%= @official.party_affiliation %></p>
+  <p class="text-lg">State: <%= @official.state %></p>
+
+  <h2 class="text-4xl mt-8">Stocks Involved In Trades</h2>
+  <% @official.trades.each do |trade| %>
+    <div class="mt-4">
+      <p><strong>Stock:</strong> <%= trade.stock.name %></p>
+      <p><strong>Transaction Type:</strong> <%= trade.transaction_type %></p>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back to Officials Chart', root_path(anchor: 'officials-chart'), class: 'btn btn-primary' %>
+</div>

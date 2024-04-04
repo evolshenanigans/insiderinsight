@@ -1,16 +1,82 @@
-<div class="h-full bg-white dark:bg-black w-full max-w-7xl mx-auto p-3 md:p-6">
-  <div class="grid grid-cols-3 gap-3">
-    <div class="col-span-1 flex flex-col text-black dark:text-white border dark:border-gray-300/30 rounded-3xl p-3 h-52 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-zinc-700 via-black to-black text-center items-center justify-center place-items-center place-content-center [text-wrap:balance] overflow-y-auto">
-      <h3 class="text-2xl font-semibold pb-3">Photo goes here</h3>
-    </div>
-    <div class="col-span-2 flex flex-col text-black dark:text-white border dark:border-gray-300/30 rounded-3xl p-3 h-96 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-zinc-700 via-black to-black text-center items-center justify-center place-items-center place-content-center [text-wrap:balance] overflow-y-auto">
-      <%= render 'bios', officials: @officials %>
-    </div>
-    <div class="col-span-3 flex flex-col text-black dark:text-white border dark:border-gray-300/30 rounded-3xl p-3 h-72 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-zinc-700 via-black to-black text-center items-center justify-center place-items-center place-content-center [text-wrap:balance] overflow-y-auto">
-      <%= render 'list', stocks: @stocks %>
-    </div>
-    <div class="col-span-3 flex flex-col text-black dark:text-white border dark:border-gray-300/30 rounded-xl p-3 h-52 bg-black text-center items-center justify-center place-items-center place-content-center [text-wrap:balance] overflow-y-auto">
-      <%= render 'info' %>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheets">
+<section class="grid h-screen w-full grid-cols-1  bg-slate-200 md:grid-cols-1 bg-gradient-to-r from-zinc-900 to-gray-900">
+  
+  <div class="flex flex-col justify-between bg-car bg-no-repeat bg-fixed bg-cover bg-right md:bg-center ">
+        <div class="mt-44 py-4 text-center text-6xl font-bold text-black">
+        <span class="font-anybody">Unlock</span><br />
+        <span class="font-anybody">Investment Success</span><br />
+        <span class=" font-extralight">Follow Your Leaders</span>
+        </div>
+  </div>
+</section>
+
+<section class=" w-5/6 m-auto mt-28 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center">
+  <div class="py-3 px-2">
+   <h1 class="text-5xl mb-8">Why Politicians Portfolios'</h1>
+   <h2 class="text-2xl font-semibold mb-4">Insight into Influential Decisions</h2>
+      <p class="text-gray-700">Politicians often have access to privileged information and insights into forthcoming legislative changes that could significantly impact various market sectors. By observing how politicians invest, you can glean insights into where they believe the market is heading.</p>
+  </div>
+    <div class="py-3 px-2">
+    <img src="https://blenderartists.org/uploads/default/optimized/4X/3/5/4/3541170449c49b84c8b43487662e086f9b9f8fa0_2_690x286.png">
+  </div>
+</section>
+
+<section class="w-full bg-lights md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat "></section>
+
+<section class=" w-5/6 m-auto mt-10 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center mb-20  ">
+  
+    <div class="py-3 px-2">
+    <img src="https://cdna.artstation.com/p/assets/images/images/027/420/102/large/juan-pablo-fuentes-ruiz-highresscreenshot00014.jpg?1591484528">
+  </div>
+
+  <div class="py-3 px-2 ">
+   <h2 class="text-2xl font-semibold mb-4">Outperform the Market</h2>
+    <p class="text-gray-700">Studies have shown that portfolios mimicking those of certain politicians can outperform the market average. This is attributed to their insider knowledge and the strategic moves made based on upcoming policy changes.</p>
+  </div>
+</section>
+
+
+<section class="w-full bg-lights md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat"></section>
+
+
+<section class="flex flex-col items-center justify-center w-full mt-10 mb-20">
+  <div class="w-5/6 max-w-6xl px-2 py-3">
+    <h1 class="text-5xl mb-8 text-center">Interested?</h1>
+    <p class="text-md text-center mb-4">click below</p>
+
+    <div class="flex flex-col items-center">
+      <div class="overflow-x-auto w-full">
+        <table class="w-full mx-auto text-center">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th class="px-4 py-2">Name</th>
+              <th class="px-4 py-2">Party Affiliation</th>
+              <th class="px-4 py-2"></th> <!-- Empty for alignment or future use -->
+            </tr>
+          </thead>
+          <tbody>
+            <% @officials.each do |official| %>
+              <tr>
+                <td class="px-4 py-2">
+                  <div class="flex justify-center items-center gap-3">
+                    <div class="avatar">
+                      <div class="mask mask-squircle w-12 h-12">
+                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full") if official.image_url.present? %>
+                      </div>
+                    </div>
+                    <div><%= official.name %></div>
+                  </div>
+                </td>
+                <td class="px-4 py-2"><%= official.party_affiliation %></td>
+                <td class="px-4 py-2"><%= link_to 'Details', official_path(official), class: "btn btn-ghost btn-xs" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+</section>

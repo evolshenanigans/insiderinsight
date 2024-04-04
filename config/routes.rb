@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Existing routes
+  # Defines the root path route ("/")
+  root "welcome#index"
 
-  root to: "welcome#landing"
+  authenticate :user do
+    resources :officials, only: [:show]
+  end
 
-  # Add resourceful routes for officials
-  get 'welcome/index' => 'welcome#index'
-  
-  resources :officials, only: [:index, :show]
+  resources :officials, only: [ :show]
 end
