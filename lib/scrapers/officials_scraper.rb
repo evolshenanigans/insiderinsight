@@ -1,18 +1,8 @@
 require 'puppeteer'
 require 'nokogiri'
-require 'pg'
 
 class OfficialsScraper
   URL = 'https://www.capitoltrades.com/trades?txDate=30d&per_page=96'
-
-  def self.db_connection
-    @db_connection ||= PG.connect(
-      dbname: 'insiderinsight',
-      user: 'insiderinsight',
-      password: 'aRnknxfU9Nc43mC3F3cSiGXP332phIz8',
-      host: 'dpg-co7cu6n109ks7386lva0-a'
-    )
-  end
 
   def self.scrape
     Puppeteer.launch(headless: true) do |browser|
@@ -61,8 +51,6 @@ class OfficialsScraper
         puts "Processed: #{politician_name}, Party: #{party}, State: #{state}, Stock: #{stock_name}, Transaction Type: #{transaction_type}, Volume: #{volume}, Security Type: #{security_type}"
       end
     end
-  ensure
-    @db_connection&.close
   end
 end
 
