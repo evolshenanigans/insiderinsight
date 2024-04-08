@@ -64,7 +64,7 @@
                   <div class="flex justify-center items-center gap-3">
                     <div class="avatar">
                       <div class="mask mask-squircle w-12 h-12">
-                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full") if official.image_url.present? %>
+                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full", crossOrigin: 'anonymous') if official.image_url.present? %>
                       </div>
                     </div>
                     <div><%= official.name %></div>
