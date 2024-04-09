@@ -7,27 +7,29 @@ border-color: red;
 border-style: dotted;
 } */
 
-.bg-car{
-    background-image:url('https://cdna.artstation.com/p/assets/images/images/027/420/102/large/juan-pablo-fuentes-ruiz-highresscreenshot00014.jpg?1591484528')
- }
- .bg-lights{
-   background-image: url('https://storage.googleapis.com/pai-images/e96dee29bfda424787d93a83ebc9586f.jpeg')
- }
- dialog{
-   animation: show 0.3s linear
- }
- dialog::backdrop {
-   background: black;
-  
-   opacity:80%;
- }
- @keyframes show{
-   from{
-     opacity:0;
-   }
-   to{
-     opacity:100%
-   }
- }
- 
- 
+.bg-capital {
+  background-image: url('https://www.tftc.io/content/images/size/w1980h1080/2024/01/us-capitol-midjourney.png');
+}
+.bg-capital2 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Capitol_at_Dusk_2.jpg/1599px-Capitol_at_Dusk_2.jpg");
+}
+.bg-capital3 {
+  background-image: url("https://images.unsplash.com/photo-1599066634419-0e3572eeb169?q=80&w=1465&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+dialog {
+  animation: show 0.3s linear;
+}
+dialog::backdrop {
+  background: black;
+
+  opacity: 80%;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
