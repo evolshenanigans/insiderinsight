@@ -13,6 +13,9 @@
     <div class="mt-4">
       <p><strong>Stock:</strong> <%= trade.stock.name %></p>
       <p><strong>Transaction Type:</strong> <%= trade.transaction_type %></p>
+      <p><strong>Transaction Count</strong> <%= trade.transaction_count %></p>
+      <p><strong>Traded</strong> <%= trade.published_at %></p>
+      <p><strong>Reported</strong> <%= trade.traded_at %></p>
     </div>
   <% end %>
 
