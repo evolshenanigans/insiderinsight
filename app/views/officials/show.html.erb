@@ -1,7 +1,7 @@
 <div class="w-4/5 m-auto mt-10">
   <div class="flex items-center">
     <% if @official.image_url.present? %>
-      <%= image_tag(@official.image_url, alt: @official.name, class: "w-24 h-24 mr-4 rounded-full", crossOrigin: 'anonymous') %>
+      <%= image_tag(@official.image_url, alt: @official.name, class: "w-24 h-24 mr-4 rounded-full object-cover", crossOrigin: 'anonymous') %>
     <% end %>
     <h1 class="text-5xl mb-8"><%= @official.name %></h1>
   </div>

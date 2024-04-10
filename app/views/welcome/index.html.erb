@@ -61,10 +61,10 @@
             <% @officials.each do |official| %>
               <tr>
                 <td class="px-4 py-2">
-                  <div class="flex justify-center items-center gap-3">
+                  <div class="flex gap-3">
                     <div class="avatar">
                       <div class="mask mask-squircle w-12 h-12">
-                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full", crossOrigin: 'anonymous') if official.image_url.present? %>
+                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full object-cover") if official.image_url.present? %>
                       </div>
                     </div>
                     <div><%= official.name %></div>
