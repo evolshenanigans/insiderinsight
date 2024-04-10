@@ -13,5 +13,6 @@ application up and running.
 ```sh
 bundle install
 yarn install
+rails db:migrate
 ./bin/dev
 ```
