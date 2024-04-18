@@ -88,6 +88,7 @@ gem "table_print"
 gem "nokogiri"
 gem 'puppeteer-ruby'
 gem 'simple_form'
+gem 'rails_admin', '~> 3.1'
 
 group :development do
   gem "annotate"
@@ -113,3 +114,5 @@ group :test do
   gem "rspec-html-matchers"
   gem "webmock"
 end
+gem "sassc-rails"
+gem "sassc-rails"
