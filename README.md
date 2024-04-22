@@ -10,6 +10,8 @@ For detailed information and component references, visit the [Daisy UI Documenta
 
 To see Daisy UI in action, check out our [live demo](https://insiderinsight.onrender.com/).
 
+![landing](https://drive.google.com/uc?export=view&id=1Gbb1tVBC_hgcPIMelBm-aA4mP47A3dcK)
+
 ## Repository Branches
 
 - **Rails 7 + esbuild (Main Branch)**: The current stable version.
