@@ -106,7 +106,7 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 6.0.0"
-  gem "bullet"
+ 
 end
 
 group :test do
