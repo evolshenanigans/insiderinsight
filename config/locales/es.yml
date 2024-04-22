@@ -1,0 +1,45 @@
+es:
+  home:
+    title: "Desbloquear"
+    subtitle: "Éxito de Inversión"
+  articles:
+    politicians_portfolio:
+      title: "Por Qué los Portafolios de los Políticos"
+      subtitle: "Visión sobre Decisiones Influyentes"
+      description: "Los políticos a menudo tienen acceso a información privilegiada y perspectivas sobre cambios legislativos venideros que podrían impactar significativamente diversos sectores del mercado. Observando cómo invierten los políticos, puedes obtener ideas sobre hacia dónde creen que se dirige el mercado."
+    market_outperformance:
+      title: "Superar al Mercado"
+      description: "Los estudios han demostrado que los portafolios que imitan a los de ciertos políticos pueden superar el promedio del mercado. Esto se atribuye a su conocimiento interno y a las movidas estratégicas basadas en cambios de políticas próximos."
+  footer:
+    interest:
+      title: "¿Interesado?"
+      description: "Haz clic abajo para ver más detalles:"
+  officials_table:
+    caption: "Lista de oficiales y sus afiliaciones partidarias con enlace de detalles"
+    headers:
+      name: "Nombre"
+      party_affiliation: "Afiliación Partidaria"
+      details: "Detalles"
+    buttons:
+      details: "Detalles"
+    alt: "Avatar de %{name}"
+  officials:
+    details:
+      alt: "Imagen de %{name}"
+      party: "Partido"
+      state: "Estado"
+      stocks_involved: "Acciones involucradas en transacciones"
+      stock: "Acción"
+      transaction_type: "Tipo de transacción"
+      transaction_count: "Cantidad de transacciones"
+      traded_on: "Comercializado"
+      reported_on: "Reportado"
+      tip_stock_name: "Este es el nombre de la acción"
+      tip_transaction_type: "Esto muestra si compraron o vendieron una acción"
+      tip_transaction_count: "Este es el volumen comercializado. Bajo: 0-15k, Medio: 15k-100k, Alto: 100k o más"
+      tip_traded_date: "La fecha en que se comercializó la acción"
+      tip_reported_date: "La fecha en que se reportó la acción"
+      back_to_chart: "Volver al gráfico de oficiales"
+
+
+

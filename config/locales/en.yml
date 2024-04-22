@@ -28,6 +28,47 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  home:
+    title: "Unlock"
+    subtitle: "Investment Success"
+  articles:
+    politicians_portfolio:
+      title: "Why Politicians Portfolios"
+      subtitle: "Insight into Influential Decisions"
+      description: "Politicians often have access to privileged information and insights into forthcoming legislative changes that could significantly impact various market sectors. By observing how politicians invest, you can glean insights into where they believe the market is heading."
+    market_outperformance:
+      title: "Outperform the Market"
+      description: "Studies have shown that portfolios mimicking those of certain politicians can outperform the market average. This is attributed to their insider knowledge and the strategic moves made based on upcoming policy changes."
+  footer:
+    interest:
+      title: "Interested?"
+      description: "Click below to see more details:"
+  officials_table:
+    caption: "List of officials and their party affiliations with details link"
+    headers:
+      name: "Name"
+      party_affiliation: "Party Affiliation"
+      details: "Details"
+    buttons:
+      details: "Details"
+    alt: "%{name} Avatar"
+  officials:
+    details:
+      alt: "%{name}'s image"
+      party: "Party"
+      state: "State"
+      stocks_involved: "Stocks Involved In Trades"
+      stock: "Stock"
+      transaction_type: "Transaction Type"
+      transaction_count: "Transaction Count"
+      traded_on: "Traded"
+      reported_on: "Reported"
+      tip_stock_name: "This is the name of the stock"
+      tip_transaction_type: "This shows if they bought or sold a stock"
+      tip_transaction_count: "This is the volume traded. Low: 0-15k, Med: 15k-100k, High: 100k or more"
+      tip_traded_date: "The date they traded the stock"
+      tip_reported_date: "The date they reported the stock"
+      back_to_chart: "Back to Officials Chart"
+
+

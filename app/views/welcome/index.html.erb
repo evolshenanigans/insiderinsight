@@ -1,49 +1,46 @@
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheets">
-<header class="grid h-screen w-full grid-cols-1  bg-slate-200 md:grid-cols-1 bg-gradient-to-r from-zinc-900 to-gray-900">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<header class="grid h-screen w-full grid-cols-1 bg-slate-200 md:grid-cols-1 bg-gradient-to-r from-zinc-900 to-gray-900">
   
-  <div class="flex flex-col justify-between bg-capital bg-no-repeat bg-fixed bg-cover bg-right md:bg-center ">
-        <h1 class="mt-44 py-4 text-center text-6xl font-bold text-black">
-      Unlock<br>
-      Investment Success<br>
-      <small class="font-extralight">Follow Your Leaders</small>
-    </h1>
-  </div>
+<div class="flex flex-col justify-between bg-capital bg-no-repeat bg-fixed bg-cover bg-right md:bg-center">
+  <h1 class="mt-44 py-4 text-center text-6xl font-bold text-black">
+    <%= t('home.title').html_safe %><br>
+    <small class="font-extralight"><%= t('home.subtitle') %></small>
+  </h1>
+</div>
+
 </header>
 
-<main class=" w-5/6 m-auto mt-28 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center">
+<main class="w-5/6 m-auto mt-28 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center">
   <article class="py-3 px-2">
-   <h2 class="text-5xl mb-8">Why Politicians Portfolios'</h2>
-   <h3 class="text-2xl font-semibold mb-4">Insight into Influential Decisions</h3>
-      <p class="text-gray-700">Politicians often have access to privileged information and insights into forthcoming legislative changes that could significantly impact various market sectors. By observing how politicians invest, you can glean insights into where they believe the market is heading.</p>
+    <h2 class="text-5xl mb-8"><%= t('articles.politicians_portfolio.title') %></h2>
+    <h3 class="text-2xl font-semibold mb-4"><%= t('articles.politicians_portfolio.subtitle') %></h3>
+    <p class="text-gray-700"><%= t('articles.politicians_portfolio.description') %></p>
   </article>
-    <aside class="py-3 px-2">
-      <%= image_tag("chess.png")%>
+  <aside class="py-3 px-2">
+    <%= image_tag("chess.png") %>
   </aside>
 </main>
 
-<section class="w-full bg-capital2 md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat "></section>
+<section class="w-full bg-capital2 md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat"></section>
 
-<section class=" w-5/6 m-auto mt-10 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center mb-20  ">
+<section class="w-5/6 m-auto mt-10 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center mb-20">
   
-    <div class="py-3 px-2">
-      <%= image_tag("stonks.png")%>
+  <div class="py-3 px-2">
+    <%= image_tag("stonks.png")%>
   </div>
 
   <div class="py-3 px-2 ">
-   <h2 class="text-2xl font-semibold mb-4">Outperform the Market</h2>
-    <p class="text-gray-700">Studies have shown that portfolios mimicking those of certain politicians can outperform the market average. This is attributed to their insider knowledge and the strategic moves made based on upcoming policy changes.</p>
+   <h2 class="text-2xl font-semibold mb-4"><%= t('articles.market_outperformance.title') %></h2>
+    <p class="text-gray-700"><%= t('articles.market_outperformance.description') %></p>
   </div>
 </section>
-
 
 <section class="w-full bg-capital3 md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat"></section>
 
 <footer class="flex flex-col items-center justify-center w-full mt-10 mb-20">
   <section class="w-5/6 max-w-6xl px-2 py-3">
-    <h2 class="text-5xl mb-8 text-center">Interested?</h2>
-    <p class="text-md text-center mb-4">Click below to see more details:</p>
+    <h2 class="text-5xl mb-8 text-center"><%= t('footer.interest.title') %></h2>
+    <p class="text-md text-center mb-4"><%= t('footer.interest.description') %></p>
     <%= render 'officials/officials_table', officials: @officials %>
   </section>
 </footer>
