@@ -1,27 +1,27 @@
-<div class="overflow-x-auto w-full">
-  <table class="w-full mx-auto text-center">
-    <caption class="sr-only"><%= t('officials_table.caption') %></caption>
-    <thead>
-      <tr>
-        <th class="px-4 py-2"><%= t('officials_table.headers.name') %></th>
-        <th class="px-4 py-2"><%= t('officials_table.headers.party_affiliation') %></th>
-        <th class="px-4 py-2 sr-only"><%= t('officials_table.headers.details') %></th> <!-- sr-only for screen readers -->
-      </tr>
-    </thead>
+<div class="overflow-x-auto w-full">	<div class="overflow-x-auto w-full">
+  <table class="w-full mx-auto text-center">	  <table class="w-full mx-auto text-center">
+    <caption class="sr-only">List of officials and their party affiliations with details link</caption>	    <caption class="sr-only"><%= t('officials_table.caption') %></caption>
+    <thead>	    <thead>
+      <tr>	      <tr>
+        <th class="px-4 py-2">Name</th>	        <th class="px-4 py-2"><%= t('officials_table.headers.name') %></th>
+        <th class="px-4 py-2">Party Affiliation</th>	        <th class="px-4 py-2"><%= t('officials_table.headers.party_affiliation') %></th>
+        <th class="px-4 py-2 sr-only">Details</th> <!-- sr-only for screen readers -->	        <th class="px-4 py-2 sr-only"><%= t('officials_table.headers.details') %></th> <!-- sr-only for screen readers -->
+      </tr>	      </tr>
+    </thead>	    </thead>
     <tbody>
       <% officials.each do |official| %>
         <tr>
           <td class="px-4 py-2">
             <div class="flex gap-3 items-center">
               <div class="mask mask-squircle w-12 h-12">
-                <%= image_tag(official.image_url, alt: "#{t('officials_table.alt', name: official.name)}", class: "w-full h-full object-cover") if official.image_url.present? %>
+                <%= image_tag(official.image_url, alt: "{official.name} Avatar", class: "w-full h-full object-cover") if official.image_url.present? %>
               </div>
               <%= official.name %>
             </div>
           </td>
           <td class="px-4 py-2"><%= official.party_affiliation %></td>
           <td class="px-4 py-2">
-            <%= link_to t('officials_table.buttons.details'), official_path(official), class: "btn btn-ghost btn-xs" %>
+            <%= link_to 'Details', official_path(official), class: "btn btn-ghost btn-xs" %>
           </td>
         </tr>
       <% end %>
