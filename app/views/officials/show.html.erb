@@ -1,24 +1,27 @@
-<div class="w-4/5 m-auto mt-10">
-  <div class="flex items-center">
+<main class="w-4/5 m-auto mt-10">
+  <header class="flex items-center mb-8">
     <% if @official.image_url.present? %>
       <%= image_tag(@official.image_url, alt: @official.name, class: "w-24 h-24 mr-4 rounded-full object-cover", crossOrigin: 'anonymous') %>
     <% end %>
-    <h1 class="text-5xl mb-8"><%= @official.name %></h1>
-  </div>
-  <p class="text-lg">Party: <%= @official.party_affiliation %></p>
-  <p class="text-lg">State: <%= @official.state %></p>
+    <h1 class="text-5xl"><%= @official.name %></h1>
+  </header>
+  <section>
+    <p class="text-lg">Party: <%= @official.party_affiliation %></p>
+    <p class="text-lg">State: <%= @official.state %></p>
+  </section>
 
-  <h2 class="text-4xl mt-8">Stocks Involved In Trades</h2>
-  <% @official.trades.each do |trade| %>
-    <div class="mt-4">
-      <p><strong><div class="tooltip" data-tip="This is the name of the stock">Stock:</div></strong> <%= trade.stock.name %></p>
-      <p><strong><div class="tooltip" data-tip="This shows if they bought or sold a stock">Transaction Type:</div></strong> <%= trade.transaction_type %></p>
-      <p><strong><div class="tooltip" data-tip="This is the volume traded. Low: 0-15k, Med: 15k-100k, high: 100k or more">Transaction Count:</div></strong> <%= trade.transaction_count %></p>
-      <p><strong><div class="tooltip" data-tip="The date they traded the stock">Traded:</div></strong> <%= trade.published_at %></p>
-      <p><strong><div class="tooltip" data-tip="This date they reported the stock">Reported:</div></strong> <%= trade.traded_at %></p>
-    </div>
-  <% end %>
+  <section>
+    <h2 class="text-4xl mt-8">Stocks Involved In Trades</h2>
+    <% @official.trades.each do |trade| %>
+      <article class="mt-4">
+        <p><strong>Stock:</strong> <span class="tooltip" data-tip="This is the name of the stock"><%= trade.stock.name %></span></p>
+        <p><strong>Transaction Type:</strong> <span class="tooltip" data-tip="This shows if they bought or sold a stock"><%= trade.transaction_type %></span></p>
+        <p><strong>Transaction Count:</strong> <span class="tooltip" data-tip="This is the volume traded. Low: 0-15k, Med: 15k-100k, high: 100k or more"><%= trade.transaction_count %></span></p>
+        <p><strong>Traded:</strong> <span class="tooltip" data-tip="The date they traded the stock"><%= trade.published_at %></span></p>
+        <p><strong>Reported:</strong> <span class="tooltip" data-tip="This date they reported the stock"><%= trade.traded_at %></span></p>
+      </article>
+    <% end %>
+  </section>
 
-
-  <%= link_to 'Back to Officials Chart', root_path(anchor: 'officials-chart'), class: 'btn btn-primary' %>
-</div>
+  <%= link_to 'Back to Officials Chart', root_path(anchor: 'officials-chart'), class: 'btn btn-primary mt-4' %>
+</main>

@@ -1,27 +1,27 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheets">
-<section class="grid h-screen w-full grid-cols-1  bg-slate-200 md:grid-cols-1 bg-gradient-to-r from-zinc-900 to-gray-900">
+<header class="grid h-screen w-full grid-cols-1  bg-slate-200 md:grid-cols-1 bg-gradient-to-r from-zinc-900 to-gray-900">
   
   <div class="flex flex-col justify-between bg-capital bg-no-repeat bg-fixed bg-cover bg-right md:bg-center ">
-        <div class="mt-44 py-4 text-center text-6xl font-bold text-black">
-        <span class="font-anybody">Unlock</span><br />
-        <span class="font-anybody">Investment Success</span><br />
-        <span class=" font-extralight">Follow Your Leaders</span>
-        </div>
+        <h1 class="mt-44 py-4 text-center text-6xl font-bold text-black">
+      Unlock<br>
+      Investment Success<br>
+      <small class="font-extralight">Follow Your Leaders</small>
+    </h1>
   </div>
-</section>
+</header>
 
-<section class=" w-5/6 m-auto mt-28 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center">
-  <div class="py-3 px-2">
-   <h1 class="text-5xl mb-8">Why Politicians Portfolios'</h1>
-   <h2 class="text-2xl font-semibold mb-4">Insight into Influential Decisions</h2>
+<main class=" w-5/6 m-auto mt-28 grid grid-col-1 gap-x-3 gap-y-10 md:grid-cols-2 max-w-6xl items-center">
+  <article class="py-3 px-2">
+   <h2 class="text-5xl mb-8">Why Politicians Portfolios'</h2>
+   <h3 class="text-2xl font-semibold mb-4">Insight into Influential Decisions</h3>
       <p class="text-gray-700">Politicians often have access to privileged information and insights into forthcoming legislative changes that could significantly impact various market sectors. By observing how politicians invest, you can glean insights into where they believe the market is heading.</p>
-  </div>
-    <div class="py-3 px-2">
+  </article>
+    <aside class="py-3 px-2">
       <%= image_tag("chess.png")%>
-  </div>
-</section>
+  </aside>
+</main>
 
 <section class="w-full bg-capital2 md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat "></section>
 
@@ -40,43 +40,10 @@
 
 <section class="w-full bg-capital3 md:py-52 py-28 md:bg-cover md:bg-center bg-contain my-20 border bg-fixed bg-no-repeat"></section>
 
-
-<section class="flex flex-col items-center justify-center w-full mt-10 mb-20">
-  <div class="w-5/6 max-w-6xl px-2 py-3">
-    <h1 class="text-5xl mb-8 text-center">Interested?</h1>
-    <p class="text-md text-center mb-4">click below</p>
-
-    <div class="flex flex-col items-center">
-      <div class="overflow-x-auto w-full">
-        <table class="w-full mx-auto text-center">
-          <!-- head -->
-          <thead>
-            <tr>
-              <th class="px-4 py-2">Name</th>
-              <th class="px-4 py-2">Party Affiliation's</th>
-              <th class="px-4 py-2"></th> <!-- Empty for alignment or future use -->
-            </tr>
-          </thead>
-          <tbody>
-            <% @officials.each do |official| %>
-              <tr>
-                <td class="px-4 py-2">
-                  <div class="flex gap-3">
-                    <div class="avatar">
-                      <div class="mask mask-squircle w-12 h-12">
-                        <%= image_tag(official.image_url, alt: "#{official.name} Avatar", class: "w-full h-full object-cover") if official.image_url.present? %>
-                      </div>
-                    </div>
-                    <div><%= official.name %></div>
-                  </div>
-                </td>
-                <td class="px-4 py-2"><%= official.party_affiliation %></td>
-                <td class="px-4 py-2"><%= link_to 'Details', official_path(official), class: "btn btn-ghost btn-xs" %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
+<footer class="flex flex-col items-center justify-center w-full mt-10 mb-20">
+  <section class="w-5/6 max-w-6xl px-2 py-3">
+    <h2 class="text-5xl mb-8 text-center">Interested?</h2>
+    <p class="text-md text-center mb-4">Click below to see more details:</p>
+    <%= render 'officials/officials_table', officials: @officials %>
+  </section>
+</footer>
