@@ -11,6 +11,12 @@ For detailed information and component references, visit the [Daisy UI Documenta
 To see Daisy UI in action, check out our [live demo](https://insiderinsight.onrender.com/).
 
 ![landing](https://drive.google.com/uc?export=view&id=1Gbb1tVBC_hgcPIMelBm-aA4mP47A3dcK)
+![lists](https://drive.google.com/uc?export=view&id=1lrvtCtZKuMrIY-Tkbp8psY-Z0HPqFIIW)
+
+![signup](https://drive.google.com/uc?export=view&id=1YXHsgH5UQZlid019YJmBiRMk22b3P5RP)
+
+![Profit](https://drive.google.com/uc?export=view&id=12YqLqqar_u91hpJuooA5Pbf8FbtZ3eHy)
+
 
 ## Repository Branches
 
