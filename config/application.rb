@@ -7,7 +7,7 @@ module Daisyui
     config.load_defaults 7.0
 
     # I18n configuration
-    config.i18n.default_locale = :es
+    config.i18n.default_locale = :en
     config.i18n.available_locales = [:en, :es]
     config.i18n.fallbacks = true
     config.i18n.enforce_available_locales = true
