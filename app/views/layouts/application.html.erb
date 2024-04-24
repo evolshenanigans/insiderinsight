@@ -12,33 +12,43 @@
     </script>
   </head>
   <body>
-    <div class="drawer">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
-        <!-- Page content here -->
-        <div class="grid grid-cols-1 gap-6 lg:p-10 xl:grid-cols-3 bg-base-200 text-base-content p-3">
-          <%= render "layouts/header" %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <%= yield %>
-        </div>
-      </div>
-      <div class="drawer-side">
-        <label for="my-drawer" class="drawer-overlay"></label>
-        <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
-          <!-- Sidebar content here -->
-          <li><a href="https://github.com/evolshenanigans/insiderinsightmvp" target="_blank" class=""> Github </a></li>
-          <% if user_signed_in? %>
-            <li>
-              <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn", data: { turbo_confirm: 'Are you sure?' } %>
+  <div class="drawer">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- Page content here -->
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:p-10 bg-base-200 text-base-content p-3">
+        <%= render "layouts/header" %>
+        
+        <!-- Conditional Rendering for Notice and Alert to not take column space -->
+        <% if notice.present? || alert.present? %>
+          <div class="col-span-3">
+            <% if notice.present? %>
+              <p class="notice"><%= notice %></p>
+            <% end %>
+            <% if alert.present? %>
+              <p class="alert"><%= alert %></p>
+            <% end %>
+          </div>
+        <% end %>
 
-            </li>
-          <% else %>
-            <li><a href="<%= new_user_session_path %>" class="btn">Login</a></li>
-          <% end %>
-        </ul>
+        <%= yield %>
       </div>
+    </div>
+    <div class="drawer-side">
+      <label for="my-drawer" class="drawer-overlay"></label>
+      <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+        <!-- Sidebar content here -->
+        <li><a href="https://github.com/evolshenanigans/insiderinsightmvp" target="_blank" class="">Github</a></li>
+        <% if user_signed_in? %>
+          <li>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn", data: { turbo_confirm: 'Are you sure?' } %>
+          </li>
+        <% else %>
+          <li><a href="<%= new_user_session_path %>" class="btn">Login</a></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </body>
+
 </html>
