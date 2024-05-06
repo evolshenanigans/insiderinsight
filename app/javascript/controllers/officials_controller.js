@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-
+// did you need to do this with Stimulus/JS? These data is static once scrapped
 export default class extends Controller {
   select(event) {
     const officialId = event.currentTarget.dataset.officialIdParam;

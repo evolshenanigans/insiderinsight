@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :officials, only: [:show]
     end
 
+    # duplicated route? officials are accessible to non authenticated users and also authenticated users
     resources :officials, only: [:show]
   end
 end
