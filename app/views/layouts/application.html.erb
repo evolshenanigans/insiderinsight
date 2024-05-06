@@ -18,7 +18,7 @@
       <!-- Page content here -->
       <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 lg:p-10 bg-base-200 text-base-content p-3">
         <%= render "layouts/header" %>
-        
+        <%# Could use a partial for flashes  %>
         <!-- Conditional Rendering for Notice and Alert to not take column space -->
         <% if notice.present? || alert.present? %>
           <div class="col-span-3">

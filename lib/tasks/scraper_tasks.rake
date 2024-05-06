@@ -1,3 +1,4 @@
+# do you manually run this?
 # lib/tasks/scraper_tasks.rake
 namespace :scraper do
   desc "Scrape officials data"
